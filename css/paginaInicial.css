@@ -1,0 +1,241 @@
+/* Reset e box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Layout base */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative; /* necessário para spotlight */
+    background: none; /* o gradiente fica no #spotlight */
+}
+
+/* Spotlight do fundo */
+#spotlight {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, #000000ce, #4e29d4e0), /* fundo escuro base */
+    radial-gradient(circle 150px at var(--x, -100px) var(--y, -100px),
+      rgba(255 255 255 / 0.3), transparent 80%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: background-position 0.1s ease-out;
+  z-index: 0;
+}
+
+
+/* Conteúdo acima do spotlight */
+main.colunas, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Main com flex e espaçamento */
+main.colunas {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Header */
+#nav_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.barra_nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.barra_nav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.barra_nav li a:hover {
+    text-decoration: underline;
+}
+
+/* Colunas */
+.coluna {
+    flex: 1 1 300px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Coluna da direita alinhada à direita */
+.coluna-direita {
+    align-items: flex-end;
+}
+
+/* Títulos */
+.titulo_caixa {
+    background-color: #282828;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    width: 200px;
+    align-self: flex-start;   /* Alinha à esquerda */
+    margin-left: -150px;      /* Controle horizontal */
+}
+
+.caixa_texto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.letras {
+    font-size: 1rem;
+}
+
+/* Quadrado preto (sobre mim) */
+.quadrado_preto {
+    width: 300px;
+    height: 300px;
+    background-color: #282828;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    align-self: flex-start;   /* Alinha à esquerda */
+    margin-left: -540px;      /* Controle horizontal */
+}
+
+/* IMAGEM na direita */
+.minha_foto {
+    width: 200px;              /* Tamanho reduzido */
+    height: auto;
+    border-radius: 8px;
+    align-self: flex-end;      /* Alinha à direita dentro da coluna */
+    margin-right: -120px;      /* Controle horizontal */
+}
+
+/* TÍTULO TECNOLOGIAS na direita */
+.titulo_tecnologias {
+    background-color: #282828;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    width: 200px;
+    align-self: flex-end;     /* Alinha à direita dentro da coluna */
+    margin-right: -120px;     /* Controle horizontal */
+    margin-top: 10px;
+}
+
+/* Retângulo horizontal */
+.retangulo_quadrado {
+    width: 450px;
+    height: 100px;
+    background-color: #282828;
+    border-radius: 8px;
+    margin-top: 20px;
+    align-self: flex-end;     /* Alinha à direita dentro da coluna */
+    margin-right: -240px;     /* Controle horizontal */
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsividade para telas pequenas (ex: celular) */
+@media (max-width: 600px) {
+    #nav_bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .barra_nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .coluna,
+    .coluna-direita {
+        max-width: 100%;
+        align-items: center; /* Centraliza tudo na tela pequena */
+    }
+
+    .minha_foto,
+    .titulo_tecnologias,
+    .retangulo_quadrado {
+        align-self: center;
+        margin-right: 0;     /* Remove empurrão pra direita */
+        margin-left: 0;
+        width: 90%;          /* Ocupa boa parte da tela */
+        max-width: 300px;
+    }
+
+    .retangulo_quadrado {
+        height: 120px;
+    }
+
+    .quadrado_preto {
+        width: 90%;
+        max-width: 300px;
+        min-height: 200px;
+    }
+
+    .titulo_caixa {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
