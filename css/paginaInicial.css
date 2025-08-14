@@ -7,8 +7,9 @@
 
 html, body {
     height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Press Start 2P', monospace;
+    background-color: #230161; /* cinza escuro */
+    color: #5C6784; /* Slate Gray */
 }
 
 /* Layout base */
@@ -16,46 +17,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    position: relative; /* necessário para spotlight */
-    background: none; /* o gradiente fica no #spotlight */
-}
-
-/* Spotlight do fundo */
-#spotlight {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  background:
-    linear-gradient(135deg, #000000ce, #4e29d4e0), /* fundo escuro base */
-    radial-gradient(circle 150px at var(--x, -100px) var(--y, -100px),
-      rgba(255 255 255 / 0.3), transparent 80%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: background-position 0.1s ease-out;
-  z-index: 0;
-}
-
-
-/* Conteúdo acima do spotlight */
-main.colunas, header, footer {
     position: relative;
-    z-index: 1;
-}
-
-/* Main com flex e espaçamento */
-main.colunas {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -63,175 +26,404 @@ main.colunas {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 20px;
-    gap: 20px;
-    flex-wrap: wrap;
+    background-color: #1A1F36;
+    padding: 15px 30px;
+    box-shadow: 4px 4px 0 #000;
 }
 
 .barra_nav {
     display: flex;
     list-style: none;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .barra_nav li a {
-    color: white;
+    color: #5C6784;
     text-decoration: none;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: color 0.2s;
 }
 
 .barra_nav li a:hover {
-    text-decoration: underline;
+    color: #6A5ACD;
+}
+
+/* Main */
+main.colunas {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    padding: 40px 20px;
 }
 
 /* Colunas */
 .coluna {
-    flex: 1 1 300px;
-    max-width: 450px;
+    flex: 1 1 400px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 10px;
+    padding: 20px;
+    background-color: #2A3A5F;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 #000;
+    margin: 10px;
 }
 
-/* Coluna da direita alinhada à direita */
-.coluna-direita {
-    align-items: flex-end;
+
+
+
+.botao-tecnologias {
+    background-color: #4B3B6C; /* mesma cor do retângulo das tecnologias */
+    color: #5C6784; /* cor da fonte */
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    padding: 10px 20px;
+    border: 4px solid #000; /* borda pixelada */
+    border-radius: 0; /* bordas retas estilo 8-bits */
+    box-shadow: 4px 4px 0 #000; /* efeito 8-bits */
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.botao-tecnologias:hover {
+    transform: translate(-2px, -2px); /* efeito de "pressionado" pixelado */
+}
+
+.botao-tecnologias:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
 }
 
 /* Títulos */
-.titulo_caixa {
-    background-color: #282828;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
+.titulo_caixa,
+.titulo_tecnologias {
+    background-color: #5C6784;
+    color: #0B0C10;
+    padding: 12px 20px;
+    border-radius: 4px;
     text-align: center;
-    font-size: 1rem;
-    width: 200px;
-    align-self: flex-start;   /* Alinha à esquerda */
-    margin-left: -150px;      /* Controle horizontal */
+    font-size: 0.8rem;
+    box-shadow: 2px 2px 0 #000;
 }
 
-.caixa_texto {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.letras {
-    font-size: 1rem;
-}
-
-/* Quadrado preto (sobre mim) */
+/* Quadrado “sobre mim” */
 .quadrado_preto {
-    width: 300px;
+    width: 500px;
     height: 300px;
-    background-color: #282828;
-    border-radius: 8px;
+    background-color: #4B3B6C;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 1rem;
-    align-self: flex-start;   /* Alinha à esquerda */
-    margin-left: -540px;      /* Controle horizontal */
+    color: #5C6784;
+    font-size: 0.7rem;
+    box-shadow: 4px 4px 0 #000;
 }
 
-/* IMAGEM na direita */
+/* Imagem */
 .minha_foto {
-    width: 200px;              /* Tamanho reduzido */
-    height: auto;
-    border-radius: 8px;
-    align-self: flex-end;      /* Alinha à direita dentro da coluna */
-    margin-right: -120px;      /* Controle horizontal */
-}
-
-/* TÍTULO TECNOLOGIAS na direita */
-.titulo_tecnologias {
-    background-color: #282828;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1rem;
     width: 200px;
-    align-self: flex-end;     /* Alinha à direita dentro da coluna */
-    margin-right: -120px;     /* Controle horizontal */
-    margin-top: 10px;
+    height: 200px; /* quadrado */
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #000;
+    object-fit: cover;
 }
 
 /* Retângulo horizontal */
 .retangulo_quadrado {
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: 100px;
-    background-color: #282828;
-    border-radius: 8px;
-    margin-top: 20px;
-    align-self: flex-end;     /* Alinha à direita dentro da coluna */
-    margin-right: -240px;     /* Controle horizontal */
+    background-color: #4B3B6C;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 4px 4px 0 #000;
+}
+
+.retangulo_quadrado img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: transform 0.2s;
+}
+
+.retangulo_quadrado img:hover {
+    transform: translate(-2px, -2px);
 }
 
 /* Footer */
 footer {
-    background-color: black;
+    background-color: #1A1F36;
     padding: 20px;
-    color: white;
+    color: #5C6784;
     text-align: center;
+    box-shadow: 4px 4px 0 #000;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .coluna, .coluna-direita {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .minha_foto, .titulo_tecnologias, .retangulo_quadrado, .quadrado_preto, .titulo_caixa {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .retangulo_quadrado { height: 120px; }
+}
+
+/* Modal */
+.modal {
+    display: none; /* começa fechado */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* fundo escuro transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-conteudo {
+    background-color: #2A2A2A; /* cinza escuro do modal */
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px 0 #000;
+    position: relative;
+}
+
+.modal-conteudo h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.modal-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-tecnologias img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 #000;
+    transition: transform 0.2s;
+}
+
+.modal-tecnologias img:hover {
+    transform: translate(-2px, -2px);
+}
+
+/* Carrossel */
+
+.carrossel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #4B3B6C; /* cor de fundo do carrossel */
+    border: 4px solid #000; /* borda estilo 8-bits */
+    border-radius: 0; /* cantos retos estilo 8-bit */
+    box-shadow: 4px 4px 0 #000; /* sombra pixelada */
+}
+
+/* Opcional: dar um fundo diferente só para a faixa dos cards */
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgba(74, 67, 108, 0.5); /* fundo semi-transparente atrás dos cartões */
+    border-radius: 4px;
+}
+
+.projetos {
+    padding: 40px 20px;
+    background-color: #230161;
+    color: #5C6784;
+}
+
+.titulo_projetos {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #5C6784;
+    color: #0B0C10;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 #000;
+}
+
+.carrossel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+}
+
+.projeto-card {
+    min-width: 250px;
+    height: 200px;
+    background-color: #2A3A5F;
+    border-radius: 4px;
     flex-shrink: 0;
     position: relative;
-    z-index: 1;
+    box-shadow: 4px 4px 0 #000;
+    cursor: pointer;
 }
 
-/* Responsividade para telas pequenas (ex: celular) */
-@media (max-width: 600px) {
-    #nav_bar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+.projeto-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
 
-    .barra_nav {
-        flex-direction: column;
-        width: 100%;
-    }
+.titulo-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(74, 67, 108, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.7rem;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
 
-    .coluna,
-    .coluna-direita {
-        max-width: 100%;
-        align-items: center; /* Centraliza tudo na tela pequena */
-    }
+.projeto-card:hover .titulo-hover {
+    opacity: 1;
+}
 
-    .minha_foto,
-    .titulo_tecnologias,
-    .retangulo_quadrado {
-        align-self: center;
-        margin-right: 0;     /* Remove empurrão pra direita */
-        margin-left: 0;
-        width: 90%;          /* Ocupa boa parte da tela */
-        max-width: 300px;
-    }
+/* Setas */
+/* Botões de setas estilo 8-bits */
+.seta-esquerda,
+.seta-direita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4B3B6C; /* cor 8-bits */
+    color: #5C6784; /* cor da seta */
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border: 4px solid #000; /* borda pixel */
+    border-radius: 0; /* cantos retos */
+    box-shadow: 4px 4px 0 #000; /* sombra estilo pixel */
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
 
-    .retangulo_quadrado {
-        height: 120px;
-    }
+.seta-esquerda { left: -30px; }
+.seta-direita { right: -30px; }
 
-    .quadrado_preto {
-        width: 90%;
-        max-width: 300px;
-        min-height: 200px;
-    }
+/* Efeito ao pressionar */
+.seta-esquerda:active,
+.seta-direita:active {
+    transform: translateY(-50%) translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+}
 
-    .titulo_caixa {
-        width: 90%;
-    }
+/* Tela de Loading */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1c; /* cinza escuro */
+    color: #6A5ACD; /* Electric Indigo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-family: 'Press Start 2P', monospace;
 }
 
 
+/* Texto de Loading */
+.loading-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
 
+/* Loader pixelado estilo 8-bits */
+.pixel-loader {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    grid-gap: 4px;
+}
 
+.pixel-loader div {
+    width: 20px;
+    height: 20px;
+    background-color: #6A5ACD; /* Electric Indigo */
+    animation: pixelJump 1s infinite;
+}
+
+.pixel-loader div:nth-child(1) { animation-delay: 0s; }
+.pixel-loader div:nth-child(2) { animation-delay: 0.2s; }
+.pixel-loader div:nth-child(3) { animation-delay: 0.4s; }
+.pixel-loader div:nth-child(4) { animation-delay: 0.6s; }
+
+/* Animação pulando pixel */
+@keyframes pixelJump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 
 
 

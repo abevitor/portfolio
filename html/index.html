@@ -4,52 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio</title>
-    <link rel="stylesheet" href="../css/paginaInicial.css"> <!-- ajuste o caminho conforme sua pasta -->
+    <link rel="stylesheet" href="../css/paginaInicial.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <header>
-        <nav id="nav_bar">
-            <img src="" alt="Logo">
-            <ul class="barra_nav">
-                <li class="ItensHeader"><a href="#">Projetos</a></li>
-                <li class="ItensHeader"><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+<div id="loading-screen">
+    <div class="pixel-loader">
+        <div></div><div></div><div></div><div></div>
+    </div>
 
-    <main class="colunas">
+  
+    
 
-        <!-- Coluna: UM POUCO SOBRE MIM -->
-        <div class="coluna">
-            <div class="titulo_caixa">
-                <p class="letras">UM POUCO SOBRE MIM</p>
+    <p class="loading-text">CARREGANDO...</p>
+</div>
+
+<header>
+    <nav id="nav_bar">
+        <div class="logo">
+            <img src="/imagens/opbu4d7g97id1.gif" alt="Logo" height="40">
+        </div>
+        <ul class="barra_nav">
+            <li><a href="https://www.linkedin.com/in/abevitor" target="_blank">LinkedIn</a></li>
+            <li><a href="curriculo.pdf" target="_blank">Currículo</a></li>
+            <li><a href="https://github.com/abevitor" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="colunas">
+
+    <!-- Coluna: UM POUCO SOBRE MIM -->
+    <div class="coluna coluna-esquerda">
+        <div class="titulo_caixa">
+            <p class="letras">UM POUCO SOBRE MIM</p>
+        </div>
+        <div class="caixa_texto">
+            <div class="quadrado_preto">
+                <p class="texto_quadrado">receba</p>
             </div>
-            <div class="caixa_texto">
-                <div class="quadrado_preto">
-                    <p class="texto_quadrado">receba</p>
-                </div>
-            </div> 
+        </div> 
+    </div>
+
+    <!-- Coluna: TECNOLOGIAS -->
+    <div class="coluna coluna-direita">
+        <img class="minha_foto" src="../imagens/image (2).jpg" alt="minha_foto">
+        <h2 class="titulo_tecnologias">TECNOLOGIAS</h2>
+        <div class="retangulo_quadrado">
+            <img src="/imagens/spring-boot-logo_full.png" alt="">
+            <img src="/imagens/226777.png" alt="">
+            <img src="/imagens/Database-mysql.svg.png" alt="">
         </div>
+        <button id="mostrarMaisBtn" class="botao-tecnologias">Mostrar mais</button>
+    </div>
 
-        <!-- Coluna: FOTO + TECNOLOGIAS + RETÂNGULO -->
-        <div class="coluna coluna-direita">
-            <img class="minha_foto" src="../imagens/image (2).jpg" alt="minha_foto">
-            <h2 class="titulo_tecnologias">TECNOLOGIAS</h2>
-            <div class="retangulo_quadrado"></div>
+</main>
+
+<!-- Modal Tecnologias -->
+<div id="modalTecnologias" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar">&times;</span>
+        <h2>Minhas Tecnologias</h2>
+        <div class="modal-tecnologias">
+            <img src="/imagens/spring-boot-logo_full.png" alt="Spring Boot">
+            <img src="/imagens/226777.png" alt="Java">
+            <img src="/imagens/Database-mysql.svg.png" alt="MySQL">
+            <!-- Adicione mais imagens de tecnologias aqui -->
         </div>
+    </div>
+</div>
 
-    </main>
-
-    <div id="spotlight"></div>
-
-    <footer>
-        <div class="footerzito">
-            oi
+<!-- Seção Projetos -->
+<section class="projetos">
+    <h2 class="titulo_projetos">MEUS PROJETOS</h2>
+    <div class="carrossel-container">
+        <button class="seta-esquerda">&#8592;</button>
+        <div class="carrossel">
+            <div class="projeto-card">
+                <img src="imagens/spring1.png" alt="">
+                <div class="titulo-hover">Spring Projeto 1</div>
+            </div>
+            <div class="projeto-card">
+                <img src="imagens/spring2.png" alt="">
+                <div class="titulo-hover">Spring Projeto 2</div>
+            </div>
         </div>
+        <button class="seta-direita">&#8594;</button>
+    </div>
+</section>
 
+<footer>
+    <div class="footerzito">
+        oi
+    </div>
+</footer>
 
-    </footer>
-<script src="../js/spotlight.js"></script>
+<script src="../js/LoadingScream.js"></script>
+<script src="../js/modalTecnologias.js"></script>
 </body>
 </html>
+
