@@ -113,16 +113,19 @@ main.colunas {
 
 /* Quadrado “sobre mim” */
 .quadrado_preto {
-    width: 500px;
-    height: 300px;
-    background-color: #4B3B6C;
-    border-radius: 4px;
+    background-color: black; /* mantém o fundo preto */
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #5C6784;
-    font-size: 0.7rem;
-    box-shadow: 4px 4px 0 #000;
+    align-items: flex-start; /* texto começa de cima */
+    padding: 20px; /* espaçamento interno */
+    box-sizing: border-box;
+}
+
+.texto_quadrado {
+    color: white; /* cor do texto branca */
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /* Imagem */
@@ -374,6 +377,68 @@ footer {
     transform: translateY(-50%) translate(2px, 2px);
     box-shadow: 2px 2px 0 #000;
 }
+
+.contato {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
+    background-color: #230161; /* mantém fundo geral da seção */
+}
+
+.contato-container {
+    background-color: #3d2b56; /* mesma cor do fundo das colunas */
+    border: 4px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.titulo_contato {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    text-align: center;
+    background-color: #4b4b78; /* mesma cor dos títulos das colunas */
+    padding: 10px;
+    border: 4px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-contato label {
+    color: white;
+    font-size: 12px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.botao-enviar {
+    background-color: #571080;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao-enviar:hover {
+    background-color: #9c0990;
+}
+
 
 /* Tela de Loading */
 #loading-screen {

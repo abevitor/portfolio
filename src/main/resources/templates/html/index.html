@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="../css/paginaInicial.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="loading-screen">
+    <div class="pixel-loader">
+        <div></div><div></div><div></div><div></div>
+    </div>
+
+  
+    
+
+    <p class="loading-text">CARREGANDO...</p>
+</div>
+
+<header>
+    <nav id="nav_bar">
+        <div class="logo">
+            <img src="/imagens/opbu4d7g97id1.gif" alt="Logo" height="40">
+        </div>
+        <ul class="barra_nav">
+            <li><a href="https://www.linkedin.com/in/abevitor" target="_blank">LinkedIn</a></li>
+            <li><a href="curriculo.pdf" target="_blank">Currículo</a></li>
+            <li><a href="https://github.com/abevitor" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="colunas">
+
+    <!-- Coluna: UM POUCO SOBRE MIM -->
+    <div class="coluna coluna-esquerda">
+        <div class="titulo_caixa">
+            <p class="letras">UM POUCO SOBRE MIM</p>
+        </div>
+        <div class="caixa_texto">
+            <div class="quadrado_preto">
+                <p class="texto_quadrado">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                     desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div> 
+    </div>
+
+    <!-- Coluna: TECNOLOGIAS -->
+    <div class="coluna coluna-direita">
+        <img class="minha_foto" src="/src/main/resources/static/imagens/" alt="minha_foto">
+        <h2 class="titulo_tecnologias">TECNOLOGIAS</h2>
+        <div class="retangulo_quadrado">
+            <img src="/src/main/resources/static/imagens/spring-boot-logo_full.png" alt="SPRINGBOOT">
+            <img src="/src/main/resources/static/imagens/226777.png" alt="JAVA">
+            <img src="/src/main/resources/static/imagens/Database-mysql.svg.png" alt="MySQL">
+            <img src="/src/main/resources/static/imagens/Python-logo-notext.svg.png" alt="PYTHON">
+            
+
+        </div>
+        <button id="mostrarMaisBtn" class="botao-tecnologias">Mostrar mais</button>
+    </div>
+
+</main>
+
+<!-- Modal Tecnologias -->
+<div id="modalTecnologias" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar">&times;</span>
+        <h2>Minhas Tecnologias</h2>
+        <div class="modal-tecnologias">
+            <img src="/src/main/resources/static/imagens/spring-boot-logo_full.png" alt="Spring Boot">
+            <img src="/src/main/resources/static/imagens/226777.png" alt="Java">
+            <img src="/src/main/resources/static/imagens/Database-mysql.svg.png" alt="MySQL">
+            <img src="/src/main/resources/static/imagens/html5_23329.png" alt="HTML5">
+            <img src="/src/main/resources/static/imagens/css.png" alt="CSS">
+            <img src="/src/main/resources/static/imagens/25231.png" alt="GITHUB">
+            <img src="/src/main/resources/static/imagens/Git-Icon-1788C.png" alt="GIT">
+            <p>em constante atualização...</p>
+            
+
+            <!-- Adicione mais imagens de tecnologias aqui -->
+        </div>
+    </div>
+</div>
+
+<!-- Seção Projetos -->
+<section class="projetos">
+    <h2 class="titulo_projetos">MEUS PROJETOS</h2>
+    <div class="carrossel-container">
+        <button class="seta-esquerda">&#8592;</button>
+        <div class="carrossel">
+            <div class="projeto-card">
+                <img src="/src/main/resources/static/imagens/spring1.png" alt="">
+                <div class="titulo-hover">Spring Projeto 1</div>
+            </div>
+            <div class="projeto-card">
+                <img src="/src/main/resources/static/imagens/spring2.png" alt="">
+                <div class="titulo-hover">Spring Projeto 2</div>
+            </div>
+        </div>
+        <button class="seta-direita">&#8594;</button>
+    </div>
+</section>
+
+<section class="contato">
+    <div class="contato-container">
+        <h2 class="titulo_contato">ENTRE EM CONTATO</h2>
+        <form action="mailto:seuemail@exemplo.com" method="post" enctype="text/plain" class="form-contato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..." required></textarea>
+
+            <button type="submit" class="botao-enviar">Enviar</button>
+        </form>
+    </div>
+</section>
+
+
+
+<footer>
+    <div class="footerzito">
+        oi
+    </div>
+</footer>
+
+<script src="../js/LoadingScream.js"></script>
+<script src="../js/modalTecnologias.js"></script>
+</body>
+</html>
+
