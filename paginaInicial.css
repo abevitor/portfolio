@@ -1,30 +1,32 @@
-/* Reset e box-sizing */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
+/* Layout padrão */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: #000;   /* ou sua cor de fundo */
+    color: white;
+    overflow-x: hidden; /* evita scroll lateral no mobile */
+}
+html,
+body {
     height: 100%;
     font-family: 'Press Start 2P', monospace;
-    background-color: #000000; /* cinza escuro */
-    color: #5C6784; /* Slate Gray */
-}
-
-/* Layout base */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
+    background-color: #000000;
+    /* cinza escuro */
+    color: #5C6784;
+    /* Slate Gray */
 }
 
 
 
 /* Header */
-
+.headerzera {
+    width: 100%;
+}
 
 #nav_bar {
     display: flex;
@@ -33,24 +35,89 @@ body {
     background-color: #000000;
     padding: 15px 30px;
     box-shadow: 4px 4px 0 #000;
+    flex-wrap: wrap; /* permite quebrar linha se necessário */
 }
 
+#nav_bar .logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Barra de navegação */
 .barra_nav {
-    display: flex;
     list-style: none;
+    display: flex;
     gap: 20px;
+    flex-wrap: wrap; /* permite quebrar linha no mobile */
+    justify-content: center;
+    align-items: center;
 }
 
 .barra_nav li a {
-    color: #5C6784;
+    color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.8rem;
-    transition: color 0.2s;
+    font-size: 14px;
 }
 
 .barra_nav li a:hover {
-    color: #6A5ACD;
+    color: #66ff00;
+}
+
+/* Responsividade Header */
+
+/* Até 600px */
+@media (max-width: 600px) {
+    #nav_bar {
+        padding: 10px 15px;
+    }
+
+    #nav_bar .logo img {
+        height: 35px;
+    }
+
+    .barra_nav li a {
+        font-size: 12px;
+        gap: 10px;
+    }
+}
+
+/* Até 480px */
+@media (max-width: 480px) {
+    #nav_bar {
+        flex-direction: column; /* logo em cima, links embaixo */
+        align-items: center;
+        padding: 8px 10px;
+    }
+
+    #nav_bar .logo img {
+        height: 30px;
+    }
+
+    .barra_nav {
+        gap: 8px;
+        margin-top: 5px;
+        flex-direction: row;
+        flex-wrap: wrap; /* permite quebrar linha se necessário */
+    }
+
+    .barra_nav li a {
+        font-size: 11px;
+    }
+}
+
+/* Até 360px */
+@media (max-width: 360px) {
+    #nav_bar {
+        padding: 5px 8px;
+    }
+
+    #nav_bar .logo img {
+        height: 25px;
+    }
+
+    .barra_nav li a {
+        font-size: 10px;
+    }
 }
 
 /* Main */
@@ -61,7 +128,6 @@ main.colunas {
     justify-content: center;
     gap: 80px;
     padding: 40px 20px;
-
 }
 
 /* Colunas */
@@ -80,27 +146,29 @@ main.colunas {
     margin: 10px;
 }
 
-
-
-
 .botao-tecnologias {
-    background-color: #030303; /* mesma cor do retângulo das tecnologias */
-    color: #ffffff; /* cor da fonte */
+    background-color: #030303;
+    /* mesma cor do retângulo das tecnologias */
+    color: #ffffff;
+    /* cor da fonte */
     font-family: 'Press Start 2P', monospace;
     font-size: 0.7rem;
     padding: 10px 20px;
-    border: 4px solid #ffffff; /* borda pixelada */
-    border-radius: 0; /* bordas retas estilo 8-bits */
-    box-shadow: 4px 4px 0 #6200ff; /* efeito 8-bits */
+    border: 4px solid #ffffff;
+    /* borda pixelada */
+    border-radius: 0;
+    /* bordas retas estilo 8-bits */
+    box-shadow: 4px 4px 0 #6200ff;
+    /* efeito 8-bits */
     cursor: pointer;
     transition: transform 0.1s;
 }
 
 .botao-tecnologias:hover {
     transform: translate(-2px, -2px);
-    background-color: #91ff00; /* efeito de "pressionado" pixelado */
+    background-color: #91ff00;
+    /* efeito de "pressionado" pixelado */
 }
-
 
 
 /* Títulos */
@@ -117,20 +185,46 @@ main.colunas {
 }
 
 /* Quadrado “sobre mim” */
+
+.sobre-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo_caixa {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.caixa_texto {
+    padding: 15px;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 14px;
+    border: 2px solid white;
+}
+
 .quadrado_preto {
-    background-color: black; /* mantém o fundo preto */
+    background-color: black;
+    /* mantém o fundo preto */
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: flex-start; /* texto começa de cima */
-    padding: 20px; /* espaçamento interno */
+    align-items: flex-start;
+    /* texto começa de cima */
+    padding: 20px;
+    /* espaçamento interno */
     box-sizing: border-box;
     border: 4px solid #ffffff;
-    
 }
 
 .texto_quadrado {
-    color: white; /* cor do texto branca */
+    color: white;
+    /* cor do texto branca */
     font-size: 14px;
     line-height: 1.5;
 }
@@ -138,7 +232,8 @@ main.colunas {
 /* Imagem */
 .minha_foto {
     width: 200px;
-    height: 200px; /* quadrado */
+    height: 200px;
+    /* quadrado */
     border-radius: 8px;
     border: 4px solid #ffffff;
     box-shadow: 4px 4px 0 #6200ff;
@@ -147,15 +242,18 @@ main.colunas {
 
 /* Retângulo horizontal */
 .retangulo_quadrado {
-    width: 100%;
-    max-width: 450px;
-    height: 100px;
-    background-color: #000000;
-    border-radius: 4px;
     display: flex;
+    flex-direction: row; /* sempre em fileira */
+    flex-wrap: wrap;     /* quebra linha se necessário */
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    width: 100%;
+    max-width: 450px;
+    height: auto; /* ajusta automaticamente */
+    padding: 10px;
+    background-color: #000000;
+    border-radius: 4px;
     box-shadow: 4px 4px 0 #6200ff;
     border: 4px solid #ffffff;
 }
@@ -167,50 +265,189 @@ main.colunas {
     transition: transform 0.2s;
 }
 
-.retangulo_quadrado img:hover {
-    transform: translate(-2px, -2px);
-}
+/* Breakpoints */
 
-/* Footer */
-footer {
-    background-color: #000000;
-    padding: 20px;
-    color: #ffffff;
-    text-align: center;
-    
-}
-
-/* Responsividade */
+/* Até 600px */
 @media (max-width: 600px) {
-    .coluna, .coluna-direita {
+    .caixa_texto {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .coluna {
+        flex: 1 1 100%;
         max-width: 100%;
-        align-items: center;
+        padding: 15px;
+        margin: 10px 0;
     }
 
-    .minha_foto, .titulo_tecnologias, .retangulo_quadrado, .quadrado_preto, .titulo_caixa {
-        width: 90%;
-        max-width: 300px;
+    .minha_foto {
+        width: 150px;
+        height: 150px;
     }
 
-    .retangulo_quadrado { height: 120px; }
+    .botao-tecnologias {
+        font-size: 0.6rem;
+        padding: 8px 15px;
+    }
+
+    .titulo_caixa,
+    .titulo_tecnologias {
+        font-size: 0.7rem;
+        padding: 10px 15px;
+    }
+
+    .form-contato input,
+    .form-contato textarea {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .botao-enviar {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .retangulo_quadrado img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Até 480px */
+@media (max-width: 480px) {
+    main.colunas {
+        gap: 40px;
+        padding: 20px 10px;
+    }
+
+    .sobre-container {
+        padding: 15px 10px;
+    }
+
+    .caixa_texto {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .quadrado_preto {
+        padding: 15px;
+    }
+
+    .minha_foto {
+        width: 120px;
+        height: 120px;
+    }
+
+    .botao-tecnologias {
+        font-size: 0.55rem;
+        padding: 6px 12px;
+    }
+
+    .titulo_caixa,
+    .titulo_tecnologias {
+        font-size: 0.65rem;
+        padding: 8px 10px;
+    }
+
+    .projeto-card {
+        min-width: 180px;
+        height: 150px;
+    }
+
+    .carrossel {
+        gap: 15px;
+        padding: 5px;
+    }
+
+    .seta-esquerda,
+    .seta-direita {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .retangulo_quadrado img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Até 360px */
+@media (max-width: 360px) {
+    body {
+        font-size: 10px;
+    }
+
+    .caixa_texto {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .minha_foto {
+        width: 100px;
+        height: 100px;
+    }
+
+    .botao-tecnologias {
+        font-size: 0.5rem;
+        padding: 5px 10px;
+    }
+
+    .titulo_caixa,
+    .titulo_tecnologias {
+        font-size: 0.6rem;
+        padding: 6px 8px;
+    }
+
+    .projeto-card {
+        min-width: 150px;
+        height: 120px;
+    }
+
+    .form-contato input,
+    .form-contato textarea,
+    .botao-enviar {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .carrossel {
+        gap: 10px;
+    }
+
+    .seta-esquerda,
+    .seta-direita {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .retangulo_quadrado img {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* Modal */
 .modal {
-    display: none; /* começa fechado */
+    display: none;
+    /* começa fechado */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7); /* fundo escuro transparente */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* fundo escuro transparente */
     justify-content: center;
     align-items: center;
     z-index: 10000;
 }
 
 .modal-conteudo {
-    background-color: #000000; /* cinza escuro do modal */
+    background-color: #000000;
+    /* cinza escuro do modal */
     padding: 30px;
     border-radius: 8px;
     max-width: 800px;
@@ -245,11 +482,23 @@ footer {
 }
 
 .modal-tecnologias {
-    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+}
+.tecnologias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.tecnologias-container img {
+    max-width: 70px;
+    height: auto;
+    object-fit: contain;
 }
 
 .modal-tecnologias img {
@@ -269,17 +518,18 @@ footer {
 }
 
 /* Carrossel */
-
 .carrossel-container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: #000000; /* cor de fundo do carrossel */
-     /* borda estilo 8-bits */
-    border-radius: 0; /* cantos retos estilo 8-bit */
-     /* sombra pixelada */
+    background-color: #000000;
+    /* cor de fundo do carrossel */
+    /* borda estilo 8-bits */
+    border-radius: 0;
+    /* cantos retos estilo 8-bit */
+    /* sombra pixelada */
 }
 
 /* Opcional: dar um fundo diferente só para a faixa dos cards */
@@ -289,7 +539,8 @@ footer {
     scroll-behavior: smooth;
     gap: 20px;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5); /* fundo semi-transparente atrás dos cartões */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* fundo semi-transparente atrás dos cartões */
     border-radius: 4px;
     scroll-behavior: smooth;
     overflow: hidden;
@@ -321,18 +572,19 @@ footer {
 .carrossel {
     display: flex;
     overflow-x: auto;
-
     gap: 20px;
     padding: 10px;
 }
 
 .carrossel {
     overflow-x: scroll;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .carrossel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari e Edge */
+    display: none;
+    /* Chrome, Safari e Edge */
 }
 
 .projeto-card {
@@ -367,8 +619,7 @@ footer {
     font-size: 0.7rem;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
-    opacity: 0;
-    transition: opacity 0.3s;
+  
 }
 
 .projeto-card:hover .titulo-hover {
@@ -382,15 +633,20 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000000; /* cor 8-bits */
-    color: #ffffff; /* cor da seta */
+    background-color: #000000;
+    /* cor 8-bits */
+    color: #ffffff;
+    /* cor da seta */
     font-family: 'Press Start 2P', monospace;
     font-size: 1.5rem;
     width: 60px;
     height: 60px;
-    border: 4px solid #ffffff; /* borda pixel */
-    border-radius: 0; /* cantos retos */
-    box-shadow: 4px 4px 0 #6200ff; /* sombra estilo pixel */
+    border: 4px solid #ffffff;
+    /* borda pixel */
+    border-radius: 0;
+    /* cantos retos */
+    box-shadow: 4px 4px 0 #6200ff;
+    /* sombra estilo pixel */
     cursor: pointer;
     transition: transform 0.1s, box-shadow 0.1s;
     position: absolute;
@@ -399,8 +655,13 @@ footer {
     z-index: 10;
 }
 
-.seta-esquerda { left: -10px; }
-.seta-direita { right: -10px; }
+.seta-esquerda {
+    left: -10px;
+}
+
+.seta-direita {
+    right: -10px;
+}
 
 /* Efeito ao pressionar */
 .seta-esquerda:active,
@@ -414,11 +675,13 @@ footer {
     justify-content: center;
     align-items: flex-start;
     padding: 40px 0;
-    background-color: #000000; /* mantém fundo geral da seção */
+    background-color: #000000;
+    /* mantém fundo geral da seção */
 }
 
 .contato-container {
-    background-color: #000000; /* mesma cor do fundo das colunas */
+    background-color: #000000;
+    /* mesma cor do fundo das colunas */
     border: 4px solid rgb(255, 255, 255);
     box-shadow: 4px 4px 0 #6200ff;
     border-radius: 5px;
@@ -431,7 +694,8 @@ footer {
     font-family: 'Press Start 2P', cursive;
     font-size: 18px;
     text-align: center;
-    background-color: #000000; /* mesma cor dos títulos das colunas */
+    background-color: #000000;
+    /* mesma cor dos títulos das colunas */
     padding: 10px;
     border: 4px solid rgb(255, 255, 255);
     box-shadow: 4px 4px 0 #6200ff;
@@ -478,8 +742,6 @@ footer {
     background-color: #91ff00;
 }
 
-
-
 /* Tela de Loading */
 #loading-screen {
     position: fixed;
@@ -487,8 +749,10 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #1c1c1c; /* cinza escuro */
-    color: #6A5ACD; /* Electric Indigo */
+    background-color: #1c1c1c;
+    /* cinza escuro */
+    color: #6A5ACD;
+    /* Electric Indigo */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -496,7 +760,6 @@ footer {
     z-index: 9999;
     font-family: 'Press Start 2P', monospace;
 }
-
 
 /* Texto de Loading */
 .loading-text {
@@ -515,19 +778,38 @@ footer {
 .pixel-loader div {
     width: 20px;
     height: 20px;
-    background-color: #6A5ACD; /* Electric Indigo */
+    background-color: #6A5ACD;
+    /* Electric Indigo */
     animation: pixelJump 1s infinite;
 }
 
-.pixel-loader div:nth-child(1) { animation-delay: 0s; }
-.pixel-loader div:nth-child(2) { animation-delay: 0.2s; }
-.pixel-loader div:nth-child(3) { animation-delay: 0.4s; }
-.pixel-loader div:nth-child(4) { animation-delay: 0.6s; }
+.pixel-loader div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.pixel-loader div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pixel-loader div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.pixel-loader div:nth-child(4) {
+    animation-delay: 0.6s;
+}
 
 /* Animação pulando pixel */
 @keyframes pixelJump {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* ERROS */
@@ -547,9 +829,11 @@ footer {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
 }
@@ -568,7 +852,8 @@ footer {
 
 #modalProjeto .fechar {
     position: absolute;
-    top: 10px; right: 15px;
+    top: 10px;
+    right: 15px;
     font-size: 30px;
     cursor: pointer;
 }
@@ -595,41 +880,76 @@ footer {
     font-weight: bold;
     text-align: center;
 }
+
 .botao-repo:hover {
     background: #005fa3;
 }
 
 /*barra rolagem*/
-
 ::-webkit-scrollbar {
-    width: 16px; 
-    background-color: #000000; 
+    width: 16px;
+    background-color: #000000;
 }
-
 
 ::-webkit-scrollbar-thumb {
-    background-color: #6200ff; 
-    border: 4px solid #000000; 
-    border-radius: 0; 
-    
+    background-color: #6200ff;
+    border: 4px solid #000000;
+    border-radius: 0;
 }
-
 
 ::-webkit-scrollbar-track {
-    background-color: #000000; 
+    background-color: #000000;
 }
 
+/* Footer base */
+footer {
+    background-color: #000000;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+footer .footerzito {
+    max-width: 800px;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
 
+/* Responsividade Footer */
 
+/* Até 600px */
+@media (max-width: 600px) {
+    footer {
+        padding: 15px 10px;
+    }
 
+    footer .footerzito p {
+        font-size: 12px;
+    }
+}
 
+/* Até 480px */
+@media (max-width: 480px) {
+    footer {
+        padding: 12px 8px;
+    }
 
+    footer .footerzito p {
+        font-size: 11px;
+    }
+}
 
+/* Até 360px */
+@media (max-width: 360px) {
+    footer {
+        padding: 10px 5px;
+    }
 
-
-
-
-
-
-
+    footer .footerzito p {
+        font-size: 10px;
+    }
+}
