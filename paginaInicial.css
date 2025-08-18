@@ -441,6 +441,7 @@ footer {
 }
 
 .form-contato {
+    justify-content: center;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -476,6 +477,7 @@ footer {
 .botao-enviar:hover {
     background-color: #91ff00;
 }
+
 
 
 /* Tela de Loading */
