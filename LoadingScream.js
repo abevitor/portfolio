@@ -57,8 +57,6 @@ window.onclick = (event) => {
 // mensagem erro
 
 document.getElementById("form-contato").addEventListener("submit", function(event) {
-    event.preventDefault();
-
     let nome = document.getElementById("nome");
     let email = document.getElementById("email");
     let mensagem = document.getElementById("mensagem");
@@ -95,12 +93,12 @@ document.getElementById("form-contato").addEventListener("submit", function(even
         valido = false;
     }
 
-    if (valido) {
-        alert("Mensagem enviada com sucesso!");
-        // Aqui você pode enviar o formulário
-        // this.submit();
+    if (!valido) {
+        event.preventDefault(); // impede envio se tiver erros
     }
 });
+
+
 
 
 

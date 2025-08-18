@@ -27,11 +27,13 @@
                         src="imagens/opbu4d7g97id1.gif"
                         alt="Logo" height="40">
                 </div>
+
                 <ul class="barra_nav">
                     <li><a href="https://www.linkedin.com/in/abevitor"
                             target="_blank">LinkedIn</a></li>
                     <li><a href="imagens/Curriculo.pdf"
-                            target="_blank" download="Curriculo_AbeVitor.pdf">Currículo</a></li>
+                            target="_blank"
+                            download="Curriculo_AbeVitor.pdf">Currículo</a></li>
                     <li><a href="https://github.com/abevitor"
                             target="_blank">GitHub</a></li>
                 </ul>
@@ -46,7 +48,8 @@
                 </div>
                 <div class="caixa_texto">
                     <div class="quadrado_preto">
-                        <p class="texto_quadrado">Meu nome é Vitor Abe Prates. Comecei a faculdade de Análise
+                        <p class="texto_quadrado">Meu nome é Vitor Abe Prates.
+                            Comecei a faculdade de Análise
                             e Desenvolvimento de Sistemas em junho de 2023,
                             impulsionado pela minha paixão por tecnologia. Meu
                             interesse pelo mundo digital começou na infância,
@@ -69,7 +72,7 @@
             <!-- Coluna: TECNOLOGIAS -->
             <div class="coluna coluna-direita">
                 <img class="minha_foto"
-                    src="/src/main/resources/static/imagens/" alt="minha_foto">
+                    src="imagens/ac01d1b3-8337-412e-bcf8-60dca648f9b0.jfif" alt="minha_foto">
                 <h2 class="titulo_tecnologias">TECNOLOGIAS</h2>
                 <div class="retangulo_quadrado">
                     <img src="imagens/spring-boot-logo_full.png"
@@ -91,17 +94,34 @@
                 <span class="fechar">&times;</span>
                 <h2>Minhas Tecnologias</h2>
                 <div class="modal-tecnologias">
-                    <img src="imagens/spring-boot-logo_full.png"
-                        alt="Spring Boot">
-                    <img src="imagens/226777.png" alt="Java">
-                    <img src="imagens/Database-mysql.svg.png" alt="MySQL">
-                    <img src="imagens/html5_23329.png" alt="HTML5">
-                    <img src="imagens/css.png" alt="CSS">
-                    <img src="imagens/25231.png" alt="GITHUB">
-                    <img src="imagens/Git-Icon-1788C.png" alt="GIT">
-                    <img
-                        src="imagens/png-clipart-javascript-logo-computer-icons-vue-js-angle-text.png"
-                        alt="PYTHON">
+                    <a href="https://spring.io/projects/spring-boot" target="_blank">
+                        <img src="imagens/spring-boot-logo_full.png"
+                            alt="Spring Boot">
+                    </a>
+                    <a
+                        href="https://www.java.com/pt-BR/download/help/whatis_java.html#xd_co_f=NjllNWQyZTYtOWI2MS00NDUwLTg3ODYtYTY2NjczZTUxY2Zm~" target="_blank">
+                        <img src="imagens/226777.png" alt="Java">
+                    </a>
+                    <a href="https://www.mysql.com/" target="_blank"><img
+                            src="imagens/Database-mysql.svg.png"
+                            alt="MySQL"></a>
+                    <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">
+                        <img src="imagens/html5_23329.png" alt="HTML5"></a>
+                    <a href="https://www.w3schools.com/css/" target="_blank"><img
+                            src="imagens/css.png" alt="CSS"></a>
+                    <a
+                        href="https://www.hostinger.com/br/tutoriais/o-que-github" target="_blank"><img
+                            src="imagens/25231.png" alt="GITHUB"></a>
+                    <a href="https://git-scm.com/" target="_blank"><img
+                            src="imagens/Git-Icon-1788C.png" alt="GIT" target="_blank"></a>
+                    <a href="https://www.python.org/doc/" target="_blank"><img
+                            src="imagens/python.png"
+                            alt="PYTHON"></a>
+
+                            <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank"><img
+                            src="imagens/png-clipart-javascript-logo-computer-icons-vue-js-angle-text.png"
+                            alt="JavaScript"></a>
+
                 </div>
             </div>
         </div>
@@ -161,29 +181,24 @@
             </div>
         </section>
 
-        <section class="contato">
-            <div class="contato-container">
-                <h2 class="titulo_contato">ENTRE EM CONTATO</h2>
-                <form id="form-contato" class="form-contato" novalidate>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome"
-                        placeholder="Seu nome">
-                    <span class="erro-msg" id="erro-nome"></span>
+        <form id="form-contato" class="form-contato" action="https://formsubmit.co/1421173e685c71327e2f4a40fc0f1782" method="POST" novalidate>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="name" placeholder="Seu nome" required>
+    <span class="erro-msg" id="erro-nome"></span>
 
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email"
-                        placeholder="Seu e-mail">
-                    <span class="erro-msg" id="erro-email"></span>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+    <span class="erro-msg" id="erro-email"></span>
 
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem"
-                        placeholder="Escreva sua mensagem..."></textarea>
-                    <span class="erro-msg" id="erro-mensagem"></span>
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="message" placeholder="Escreva sua mensagem..." required></textarea>
+    <span class="erro-msg" id="erro-mensagem"></span>
 
-                    <button type="submit" class="botao-enviar">Enviar</button>
-                </form>
-            </div>
-        </section>
+    <button type="submit" class="botao-enviar">Enviar</button>
+
+    <input type="hidden" name="_captcha" value="false"> <!-- Desativa captcha -->
+    <input type="hidden" name="_template" value="box"> <!-- Layout do email enviado -->
+</form>
 
         <footer>
             <div class="footerzito">
