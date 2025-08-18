@@ -335,6 +335,7 @@ footer {
 }
 
 .projeto-card {
+    flex: 1;
     min-width: 250px;
     height: 200px;
     background-color: #000000;
@@ -358,8 +359,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
-    color: #000000;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
     text-align: center;
     padding: 10px 0;
     font-size: 0.7rem;
@@ -538,7 +539,67 @@ footer {
     display: inline-block;
 }
 
-/*BACKGROUND */
+/* Modal Projeto */
+#modalProjeto {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#modalProjeto .modal-conteudo {
+    background: #000000;
+    padding: 20px;
+    width: 70%;
+    max-width: 800px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#modalProjeto .fechar {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-projeto-header {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.modal-projeto-header img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+.botao-repo {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+.botao-repo:hover {
+    background: #005fa3;
+}
+
+
+
+
+
 
 
 

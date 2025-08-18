@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portifólio</title>
+        <link rel="stylesheet" href="paginaInicial.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div id="loading-screen">
+            <div class="pixel-loader">
+                <div></div><div></div><div></div><div></div>
+            </div>
+
+            <p class="loading-text">CARREGANDO...</p>
+        </div>
+
+        <header class="headerzera">
+            <nav id="nav_bar">
+                <div class="logo">
+                    <img
+                        src="imagens/opbu4d7g97id1.gif"
+                        alt="Logo" height="40">
+                </div>
+                <ul class="barra_nav">
+                    <li><a href="https://www.linkedin.com/in/abevitor"
+                            target="_blank">LinkedIn</a></li>
+                    <li><a href="imagens/Curriculo.pdf"
+                            target="_blank" download="Curriculo_AbeVitor.pdf">Currículo</a></li>
+                    <li><a href="https://github.com/abevitor"
+                            target="_blank">GitHub</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="colunas">
+
+            <!-- Coluna: UM POUCO SOBRE MIM -->
+            <div class="coluna coluna-esquerda">
+                <div class="titulo_caixa">
+                    <p class="letras">UM POUCO SOBRE MIM</p>
+                </div>
+                <div class="caixa_texto">
+                    <div class="quadrado_preto">
+                        <p class="texto_quadrado">Meu nome é Vitor Abe Prates. Comecei a faculdade de Análise
+                            e Desenvolvimento de Sistemas em junho de 2023,
+                            impulsionado pela minha paixão por tecnologia. Meu
+                            interesse pelo mundo digital começou na infância,
+                            através dos jogos eletrônicos, o que despertou em
+                            mim uma curiosidade constante por inovação e
+                            desenvolvimento. Desde então, busco aprender e
+                            evoluir todos os dias, me aprofundando em novas
+                            tecnologias e aprimorando minhas habilidades para
+                            contribuir com soluções criativas e eficientes. Além
+                            da tecnologia, sou apaixonado por música, moda e
+                            Counter-Strike, e também tenho grande interesse por
+                            linguagens de programação, especialmente Java. Estou
+                            sempre em busca de novos desafios que me permitam
+                            crescer tanto profissionalmente quanto
+                            pessoalmente.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna: TECNOLOGIAS -->
+            <div class="coluna coluna-direita">
+                <img class="minha_foto"
+                    src="/src/main/resources/static/imagens/" alt="minha_foto">
+                <h2 class="titulo_tecnologias">TECNOLOGIAS</h2>
+                <div class="retangulo_quadrado">
+                    <img src="imagens/spring-boot-logo_full.png"
+                        alt="SPRINGBOOT">
+                    <img src="imagens/226777.png" alt="JAVA">
+                    <img src="imagens/Database-mysql.svg.png" alt="MySQL">
+                    <img src="imagens/Python-logo-notext.svg.png" alt="PYTHON">
+
+                </div>
+                <button id="mostrarMaisBtn" class="botao-tecnologias">Mostrar
+                    mais</button>
+            </div>
+
+        </main>
+
+        <!-- Modal Tecnologias -->
+        <div id="modalTecnologias" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar">&times;</span>
+                <h2>Minhas Tecnologias</h2>
+                <div class="modal-tecnologias">
+                    <img src="imagens/spring-boot-logo_full.png"
+                        alt="Spring Boot">
+                    <img src="imagens/226777.png" alt="Java">
+                    <img src="imagens/Database-mysql.svg.png" alt="MySQL">
+                    <img src="imagens/html5_23329.png" alt="HTML5">
+                    <img src="imagens/css.png" alt="CSS">
+                    <img src="imagens/25231.png" alt="GITHUB">
+                    <img src="imagens/Git-Icon-1788C.png" alt="GIT">
+                    <img
+                        src="imagens/png-clipart-javascript-logo-computer-icons-vue-js-angle-text.png"
+                        alt="PYTHON">
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Projetos -->
+        <section class="projetos">
+            <h2 class="titulo_projetos">MEUS PROJETOS</h2>
+            <div class="carrossel-container">
+                <button class="seta-esquerda">&#8592;</button>
+                <div class="carrossel">
+
+                    <div class="projeto-card">
+                        <a href="https://github.com/abevitor/JavaSAWS"
+                            target="_blank">
+                            <img src="imagens/java.png" alt="cadastrar-tarefas">
+                            <div class="titulo-hover">Exercicios Java</div>
+                        </a>
+
+                    </div>
+
+                    <div class="projeto-card">
+                        <a href="https://github.com/abevitor/ToDoAPIRest"
+                            target="_blank">
+                            <img src="imagens/cadastro_tarefas.jfif"
+                                alt="cadastrar-tarefas">
+                            <div class="titulo-hover">Projeto Gerenciador de
+                                Tarefas</div>
+                        </a>
+
+                    </div>
+                    <div class="projeto-card">
+                        <a href="https://github.com/abevitor/ApploginGit"
+                            target="_blank">
+                            <img src="imagens/login_cadastro.jfif" alt="login">
+                            <div class="titulo-hover">Projeto Login</div>
+                        </a>
+
+                    </div>
+
+                    <div class="projeto-card">
+                        <a href="https://github.com/abevitor/JDBC_DIO"
+                            target="_blank">
+                            <img src="imagens/CRUD.jfif" alt="CRUD">
+                            <div class="titulo-hover">Projeto CRUD Java</div>
+                        </a>
+
+                    </div>
+
+                    <div class="projeto-card">
+                        <a href="https://github.com/abevitor/sudoku"
+                            target="_blank">
+                            <img src="imagens/sudoku.jfif" alt="sudoku-jogo">
+                            <div class="titulo-hover">Sudoku</div></a>
+                    </div>
+                </div>
+                <button class="seta-direita">&#8594;</button>
+            </div>
+        </section>
+
+        <section class="contato">
+            <div class="contato-container">
+                <h2 class="titulo_contato">ENTRE EM CONTATO</h2>
+                <form id="form-contato" class="form-contato" novalidate>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome"
+                        placeholder="Seu nome">
+                    <span class="erro-msg" id="erro-nome"></span>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email"
+                        placeholder="Seu e-mail">
+                    <span class="erro-msg" id="erro-email"></span>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"
+                        placeholder="Escreva sua mensagem..."></textarea>
+                    <span class="erro-msg" id="erro-mensagem"></span>
+
+                    <button type="submit" class="botao-enviar">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footerzito">
+                <p>&copy; 2025 Portifólio. Todos os direitos reservados.</p>
+
+            </div>
+        </footer>
+
+        <script src="LoadingScream.js"></script>
+    </body>
+</html>
